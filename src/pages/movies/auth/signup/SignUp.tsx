@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { Button, Form } from "react-bootstrap"
 import ApiClient from "../../../../utils/ApiClient"
+import { NavLink } from "react-router"
 
 interface SignUpForm {
     username : string,
@@ -38,6 +39,7 @@ function SignUp() {
     }
 
     return <div className="container mx-auto">
+        <h1> Sign Up </h1> <br></br>
         <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="formUsername">
                     <Form.Label>Username</Form.Label>
@@ -63,12 +65,13 @@ function SignUp() {
                     value={form.password}
                     onChange={onHandleChange}
                     name="password"
-                    type="password" 
+                    type="text" 
                     placeholder="password"/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Sign Up
                 </Button>
+                <NavLink to="/signin">Sign In</NavLink>
         </Form>
         </div>
 
