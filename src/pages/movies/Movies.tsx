@@ -19,7 +19,7 @@ function Movies() {
 
     const fetchMovies = useCallback (async () => {
         setLoading(true)
-        const response = await ApiClient.get("/movies")
+        const response = await ApiClient.get(`/movies`)
         
         if (response.status == 200) {
             setMovies(response.data.data)
@@ -68,6 +68,11 @@ function Movies() {
                                 <td>{movie.tahunRilis}</td>
                                 <td>{movie.sutradara}</td>
                                 <td>
+                                    <NavLink
+                                    to={`/movies/edit-movie/${movie._id}`}
+                                    className="btn btn-primary">
+                                    edit
+                                    </NavLink>
                                     <Button variant="danger" onClick={() => handleDelete(movie._id)}>Delete</Button>
                                 </td>
                             </tr>
