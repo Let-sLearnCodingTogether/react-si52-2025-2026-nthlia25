@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path : "/", //alamat dari sebuah page
+        path : "/movies", //alamat dari sebuah page
         children : [
             {
                 index : true,
